@@ -1,0 +1,23 @@
+from states.stop_states import register_stop_handlers
+from handlers.client_side.dating import register_dating_handlers
+from handlers.client_side.start_command import register_start_handler
+from handlers.client_side.register_user import registration_of_registration_handlers
+from handlers.client_side.profile import register_handler_profile
+from handlers.client_side.scores import register_handler_scores
+from handlers.client_side.top import register_handlers_top
+from handlers.client_side.referral import register_handlers_referral
+from handlers.client_side.payments_paypal import register_handlers_payments_paypal
+from handlers.client_side.statistic_vip import register_handlers_statistic_vip
+from handlers.admin_side.register_fake_acc import registration_handlers_fake_register
+
+register_stop_handlers()
+register_dating_handlers()
+register_start_handler()
+registration_of_registration_handlers()
+register_handler_profile()
+register_handler_scores()
+register_handlers_top()
+register_handlers_referral()
+register_handlers_payments_paypal()
+register_handlers_statistic_vip()
+registration_handlers_fake_register()
