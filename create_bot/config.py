@@ -1,6 +1,10 @@
 import os
+from dotenv import load_dotenv
 
-token = 'токен бота'
-token_admin = 'токен для админа бота'
-admins = [123456789]  # ТВОЙ ID
-bot_name = '@KvasAndMombot'  # ID твоего бота (username)
+load_dotenv()
+
+token = os.getenv('TOKEN')
+admins = list(map(int, os.getenv('ADMINS').split(',')))
+bot_name = os.getenv('BOT_NAME')
+
+token_admin = os.getenv('ADMIN_TOKEN')
