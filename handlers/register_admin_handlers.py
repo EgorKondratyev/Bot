@@ -1,0 +1,21 @@
+from handlers.admin_side.add_sub_channel import register_handlers_sub_channel
+from handlers.admin_side.change_price_payments import register_handlers_change_price
+from handlers.admin_side.change_state_top import register_handlers_change_state_top
+from handlers.admin_side.start_command import register_handler_start_command
+from handlers.admin_side.issuance_vip import register_handlers_issuance_vip
+from handlers.admin_side.issuance_king_chat import register_handlers_issuance_king_status
+from handlers.admin_side.statistic import register_handlers_statistic
+from handlers.admin_side.complain import register_handlers_ban_users
+from handlers.admin_side.settings_gift import register_handlers_settings_gift
+from handlers.admin_side.change_settings_paypal import register_handlers_settings_paypal
+
+register_handlers_sub_channel()
+register_handlers_change_price()
+register_handlers_change_state_top()
+register_handler_start_command()
+register_handlers_issuance_vip()
+register_handlers_issuance_king_status()
+register_handlers_statistic()
+register_handlers_ban_users()
+register_handlers_settings_gift()
+register_handlers_settings_paypal()

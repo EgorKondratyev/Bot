@@ -6,8 +6,9 @@ from fake_useragent import UserAgent
 from create_bot.bot import bot, dp
 from create_bot.config import admins
 from databases.client_side import RegisterUserDB
-from keyboard.client_keyboard.default.register_keyboard import sex_menu, sex_interesting_menu, location_menu
-from keyboard.client_keyboard.default.main_keyboard import main_menu
+from keyboard.client_keyboard.default.register_keyboard import create_sex_menu, create_sex_interesting_menu,\
+    create_location_menu
+from keyboard.client_keyboard.default.main_keyboard import create_main_keyboard
 from states.client_states.register_states import FakeRegisterFSM
 from log.log import logger
 
@@ -48,7 +49,8 @@ async def get_age(message: Message, state: FSMContext):
                 logger.debug('Возраст успешно установлен на фейковый аккаунт')
 
                 await FakeRegisterFSM.user_sex.set()
-                await message.answer('Теперь определимся с полом', reply_markup=sex_menu)
+                await message.answer('Теперь определимся с полом',
+                                     reply_markup=await create_sex_menu(message.from_user.id))
             else:
                 if age > 125:
                     await message.answer(f'На данный момент до {age} лет никто не доживал!\n\n'
@@ -76,7 +78,8 @@ async def get_user_sex(message: Message, state: FSMContext):
             logger.debug('Пол успешно установлен на фейковый аккаунт')
 
             await FakeRegisterFSM.interesting_sex.set()
-            await message.answer('Кто Вам интересен?', reply_markup=sex_interesting_menu)
+            await message.answer('Кто Вам интересен?',
+                                 reply_markup=await create_sex_interesting_menu(message.from_user.id))
 
         elif message.text.lower() == 'я парень' or message.text.lower() == 'я парень👨':
             async with state.proxy() as data:
@@ -85,7 +88,8 @@ async def get_user_sex(message: Message, state: FSMContext):
             logger.debug('Пол успешно установлен на фейковый аккаунт')
 
             await FakeRegisterFSM.interesting_sex.set()
-            await message.answer('Кто Вам интересен?', reply_markup=sex_interesting_menu)
+            await message.answer('Кто Вам интересен?',
+                                 reply_markup=await create_sex_interesting_menu(message.from_user.id))
 
         else:
             await message.answer('Для того, чтобы определиться с полом необходимо нажать на одну из предложенных '
@@ -111,7 +115,7 @@ async def get_interesting_sex(message: Message, state: FSMContext):
             logger.debug('Интересующий пол успешно установлен на фейковый аккаунт')
 
             await FakeRegisterFSM.city.set()
-            await message.answer('Из какого Вы города?', reply_markup=location_menu)
+            await message.answer('Из какого Вы города?', reply_markup=await create_location_menu(message.from_user.id))
 
         elif message.text.lower() == 'девушки' or message.text.lower() == 'девушки👧':
             async with state.proxy() as data:
@@ -119,15 +123,15 @@ async def get_interesting_sex(message: Message, state: FSMContext):
             logger.debug('Интересующий пол успешно установлен на фейковый аккаунт')
 
             await FakeRegisterFSM.city.set()
-            await message.answer('Из какого Вы города?', reply_markup=location_menu)
+            await message.answer('Из какого Вы города?', reply_markup=await create_location_menu(message.from_user.id))
 
         elif message.text.lower() == 'все равно':
             async with state.proxy() as data:
-                data['interesting_sex'] = message.text.lower()
+                data['interesting_sex'] = 'все равно'
             logger.debug('Интересующий пол успешно установлен на фейковый аккаунт')
 
             await FakeRegisterFSM.city.set()
-            await message.answer('Из какого Вы города?', reply_markup=location_menu)
+            await message.answer('Из какого Вы города?', reply_markup=await create_location_menu(message.from_user.id))
         else:
             await message.answer('Для того, чтобы определиться с тем, кто Вам интересен необходимо нажать на кнопку '
                                  'или же написать "Парни"/"Девушки"/"Все равно"')
@@ -253,7 +257,8 @@ async def finish_register(message: Message, state: FSMContext):
                 await message.answer('Вот так выглядит Ваш профиль: ')
                 caption = f'{name_user}, {age}, {location}\n\n' \
                           f'{description_user}'
-                await message.answer_photo(photo=photo_id, caption=caption, reply_markup=main_menu)
+                await message.answer_photo(photo=photo_id, caption=caption,
+                                           reply_markup=await create_main_keyboard(message.from_user.id))
             else:
                 register_db.user_update(user_id=user_id, age=age, user_sex=user_sex,
                                         interesting_sex=interesting_sex, city=location, name_user=name_user,
@@ -262,7 +267,8 @@ async def finish_register(message: Message, state: FSMContext):
                 await message.answer('Вот так выглядит Ваш профиль: ')
                 caption = f'{name_user}, {age}, {location}\n\n' \
                           f'{description_user}'
-                await message.answer_photo(photo=photo_id, caption=caption, reply_markup=main_menu)
+                await message.answer_photo(photo=photo_id, caption=caption,
+                                           reply_markup=await create_main_keyboard(message.from_user.id))
 
             await state.finish()
         else:

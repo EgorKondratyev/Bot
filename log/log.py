@@ -1,6 +1,13 @@
-from loguru import logger
+import logging.config
+import yaml
+import logging
 
-
-# logger.add("DEBUG.log", format="{time} - {level} {message}", level="DEBUG")
-logger.add("INFO.log", format="{time} - {level} Message: {message}", level="INFO")
-logger.add("WARNING.log", format="{time} - {level} Message: {message}", level="WARNING")
+logging.getLogger('telethon.network.mtprotosender').setLevel('CRITICAL')
+logging.getLogger('telethon.extensions.messagepacker').setLevel('CRITICAL')
+logging.getLogger('telethon.crypto.libssl').setLevel('CRITICAL')
+logging.getLogger('telethon.crypto.aes').setLevel('CRITICAL')
+logger = logging.getLogger('__main__')
+# log/config.yml - host
+# C:\python\bots\BotForRey\log\config.yml - desktop
+with open(r'log/config.yml', 'r') as obj:
+    logging.config.dictConfig(yaml.safe_load(obj))

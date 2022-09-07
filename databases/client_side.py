@@ -1,6 +1,6 @@
 import pymysql
 
-from databases.auth_data import host, user, password, db_name
+from databases.auth_data import host, user, password, db_name, port
 from log.log import logger
 
 
@@ -13,10 +13,9 @@ class RegisterUserDB:
     # time_user_active - Параметр, содержащий последнюю активность пользователя в боте в UNIX time (Учитываются только
     # лайки и просмотр анкет)
     # Все остальные параметры age, ..., instagram - это элементы профиля
-    @logger.catch()
     def __init__(self):
         try:
-            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name)
+            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name, port=port)
             self.__cur = self.__base.cursor()
             self.__cur.execute("""CREATE TABLE IF NOT EXISTS register_user(
                 user_id BIGINT,
@@ -77,6 +76,13 @@ class RegisterUserDB:
                            'SET photo = %s '
                            'WHERE user_id = %s',
                            (photo_id, user_id))
+        self.__base.commit()
+
+    def video_update(self, video_id: str, user_id: int):
+        self.__cur.execute('UPDATE register_user '
+                           'SET video = %s '
+                           'WHERE user_id = %s',
+                           (video_id, user_id))
         self.__base.commit()
 
     def description_update(self, description: str, user_id: int):
@@ -304,10 +310,9 @@ class ScoresDB:
     # user_id - владелец отметок.
     # my_scores - те, кого оценил владелец
     # their_scores - те, кто оценил владельца
-    @logger.catch()
     def __init__(self):
         try:
-            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name)
+            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name, port=port)
             self.__cur = self.__base.cursor()
             self.__cur.execute("""CREATE TABLE IF NOT EXISTS scores(
                     user_id BIGINT,
@@ -400,10 +405,9 @@ class StatisticDB:
     # residence_time - поле содержащее время нахождения человека в боте (с момента регистрации) в unix time.
     # amount_my_complain - кол-во жалоб, которые отправил пользователь.
     # amount_their_complain - кол-во жалоб, которые отправили на пользователя
-    @logger.catch()
     def __init__(self):
         try:
-            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name)
+            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name, port=port)
             self.__cur = self.__base.cursor()
             self.__cur.execute("""CREATE TABLE IF NOT EXISTS statistic(
                                 user_id BIGINT,
@@ -538,10 +542,9 @@ class StatisticDB:
 
 class TopDB:
     """База данных, которая содержит статистику топа"""
-    @logger.catch()
     def __init__(self):
         try:
-            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name)
+            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name, port=port)
             self.__cur = self.__base.cursor()
             self.__cur.execute("""CREATE TABLE IF NOT EXISTS top(
                                     user_id BIGINT,
@@ -586,10 +589,9 @@ class TopDB:
 class ReferralDB:
     """База данных, отвечающая за реферальную систему"""
 
-    @logger.catch()
     def __init__(self):
         try:
-            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name)
+            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name, port=port)
             self.__cur = self.__base.cursor()
             self.__cur.execute("""CREATE TABLE IF NOT EXISTS referral(
                 user_id BIGINT,
@@ -619,6 +621,61 @@ class ReferralDB:
                            'WHERE user_id = %s',
                            (user_id, ))
         return len(self.__cur.fetchall())
+
+    def __del__(self):
+        self.__cur.close()
+        self.__base.close()
+
+
+class LanguageDB:
+    """Таблица отвечающая за языки"""
+    def __init__(self):
+        try:
+            self.__base = pymysql.connect(host=host, user=user, password=password, db=db_name, port=port)
+            self.__cur = self.__base.cursor()
+            self.__cur.execute("""CREATE TABLE IF NOT EXISTS language_db(
+                    user_id BIGINT,
+                    language TEXT
+                )""")
+            self.__base.commit()
+        except Exception as ex:
+            logger.warning(f'Возникли проблемы с базой данных "referral"\n\n'
+                           f'{ex}')
+
+    def exists_user(self, user_id: int) -> bool:
+        self.__cur.execute('SELECT user_id '
+                           'FROM language_db '
+                           'WHERE user_id = %s',
+                           (user_id, ))
+        return len(self.__cur.fetchmany(1)).__bool__()
+
+    def add_user(self, user_id: int, language: str):
+        self.__cur.execute('INSERT INTO language_db(user_id, language) '
+                           'VALUES(%s, %s)',
+                           (user_id, language))
+        self.__base.commit()
+
+    def get_all_language(self) -> tuple:
+        self.__cur.execute('SELECT language '
+                           'FROM language_db')
+        return self.__cur.fetchall()
+
+    def update_user(self, user_id: int, language: str):
+        self.__cur.execute('UPDATE language_db '
+                           'SET language = %s '
+                           'WHERE user_id = %s',
+                           (language, user_id))
+        self.__base.commit()
+
+    def get_language_user(self, user_id: int) -> str:
+        self.__cur.execute('SELECT language '
+                           'FROM language_db '
+                           'WHERE user_id = %s',
+                           (user_id, ))
+        language = self.__cur.fetchall()
+        if language:
+            return language[0][0]
+        return 'english'
 
 
 # Формат

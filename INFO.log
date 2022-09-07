@@ -141,3 +141,522 @@ HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries e
 2022-08-25T07:17:58.765557+0300 - WARNING Message: Возникла ошибка при "/profile"
 
 There is no photo in the request
+2022-08-27T19:53:20.987436+0300 - WARNING Message: Возникла ошибка в базе данных "state_top"
+
+(1049, "Unknown database 'dating'")
+2022-08-28T09:42:52.012869+0300 - WARNING Message: Возникла ошибка при установлении возраста человеку при регистрации
+
+generator raised StopIteration
+2022-08-28T09:43:52.126176+0300 - WARNING Message: Возникла ошибка при установлении возраста человеку при регистрации
+
+generator raised StopIteration
+2022-08-28T09:44:42.781604+0300 - WARNING Message: Возникла ошибка при установлении возраста человеку при регистрации
+
+generator raised StopIteration
+2022-08-28T10:25:51.704777+0300 - WARNING Message: Возникла ошибка при установлении возраста человеку при регистрации
+
+Object of type coroutine is not JSON serializable
+2022-08-28T13:00:26.457994+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+'list' object has no attribute 'text'
+2022-08-28T13:02:03.360901+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+'list' object has no attribute 'text'
+2022-08-28T13:03:50.336486+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+'list' object has no attribute 'text'
+2022-08-28T13:04:11.807652+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+'list' object has no attribute 'text'
+2022-08-28T13:04:46.529247+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+'list' object has no attribute 'text'
+2022-08-28T13:06:13.731960+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+'list' object has no attribute 'text'
+2022-08-28T13:10:52.503067+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+can only concatenate str (not "Translated") to str
+2022-08-28T13:11:16.286335+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+can only concatenate str (not "Translated") to str
+2022-08-28T13:11:48.197379+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+can only concatenate str (not "Translated") to str
+2022-08-28T13:14:34.984489+0300 - WARNING Message: Возникла ошибка при "/profile"
+
+'str' object has no attribute 'text'
+2022-08-29T07:57:57.142829+0300 - ERROR Message: An error has been caught in function 'get_top_handler', process 'MainProcess' (12224), thread 'MainThread' (4432):
+Traceback (most recent call last):
+
+  File "C:\python\bots\DatingBot\main.py", line 38, in <module>
+    executor.start_polling(dp, on_startup=startup, on_shutdown=shutdown, skip_updates=True)
+    │        │             │              │                    └ <function shutdown at 0x0000021D94BEFEB0>
+    │        │             │              └ <function startup at 0x0000021D94BEFF40>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000021D9426BDC0>
+    │        └ <function start_polling at 0x0000021D94188F70>
+    └ <module 'aiogram.utils.executor' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\utils\\executor.py'>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\utils\executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x0000021D94189990>
+    └ <aiogram.utils.executor.Executor object at 0x0000021D915A5B40>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000021D93247010>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000021D931980D0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000021D93137760>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 80768665, "message": {"message_id": 14298, "from": {"id": 1079895323, "is_bot": false, "first_name": "...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000021D9426BDC0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x0000021D94060610>
+                 │    │                │      └ <Update {"update_id": 80768665, "message": {"message_id": 14298, "from": {"id": 1079895323, "is_bot": false, "first_name": "E...
+                 │    │                └ <function Handler.notify at 0x0000021D9409BD90>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x0000021D9426BEE0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000021D9426BDC0>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 14298, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "la...
+                     │           └ <function get_top_handler at 0x0000021D95460A60>
+                     └ Handler.HandlerObj(handler=<function get_top_handler at 0x0000021D95460A60>, spec=FullArgSpec(args=['message'], varargs=None,...
+
+> File "C:\python\bots\DatingBot\handlers\client_side\top.py", line 98, in get_top_handler
+    await get_kingdom(message)
+          │           └ <Message {"message_id": 14298, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "lan...
+          └ <function get_kingdom at 0x0000021D95460700>
+
+  File "C:\python\bots\DatingBot\handlers\client_side\top.py", line 76, in get_kingdom
+    await message.answer(translate_text,
+          │       │      └ '最高のユーザーは、このデート チャットボットの <b>毎日 10,000 人以上のメンバー</bに表示されます!\n\n1. 👉<a href="tg://user?id=1079895323">Egor</a> - 完全に異なりますが、ほぼ同じで...
+          │       └ <function Message.answer at 0x0000021D940055A0>
+          └ <Message {"message_id": 14298, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "lan...
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\types\message.py", line 397, in answer
+    return await self.bot.send_message(
+                 │    └ <property object at 0x0000021D93E80180>
+                 └ <Message {"message_id": 14298, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "lan...
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\bot.py", line 341, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+                   │    │       │   │       │             └ {'chat_id': 1079895323, 'text': '最高のユーザーは、このデート チャットボットの <b>毎日 10,000 人以上のメンバー</bに表示されます!\n\n1. 👉<a href="tg://user?id=107989...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x0000021D94062530>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\bot\\api.py'>
+                   │    └ <function BaseBot.request at 0x0000021D94079CF0>
+                   └ <aiogram.bot.bot.Bot object at 0x0000021D932268C0>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+                 │   │                  │    │              │    │       │             │       │     └ None
+                 │   │                  │    │              │    │       │             │       └ {'chat_id': 1079895323, 'text': '最高のユーザーは、このデート チャットボットの <b>毎日 10,000 人以上のメンバー</bに表示されます!\n\n1. 👉<a href="tg://user?id=107989...
+                 │   │                  │    │              │    │       │             └ 'sendMessage'
+                 │   │                  │    │              │    │       └ <aiogram.bot.bot.Bot object at 0x0000021D932268C0>
+                 │   │                  │    │              │    └ TelegramAPIServer(base='https://api.telegram.org/bot{token}/{method}', file='https://api.telegram.org/file/bot{token}/{path}')
+                 │   │                  │    │              └ <aiogram.bot.bot.Bot object at 0x0000021D932268C0>
+                 │   │                  │    └ <function BaseBot.get_session at 0x0000021D940795A0>
+                 │   │                  └ <aiogram.bot.bot.Bot object at 0x0000021D932268C0>
+                 │   └ <function make_request at 0x0000021D9403E8C0>
+                 └ <module 'aiogram.bot.api' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\bot\\api.py'>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x0000021D93B18B80>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot5040935584:AAHGlNMGfqXhi5bctUpBU0fv1aMbYWMrSGQ/sendMessage) [400 Bad Request]>
+           │            │       │        │             │        │               <C...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot5040935584:AAHGlNMGfqXhi5bctUpBU0fv1aMbYWMrSGQ/sendMessage) [400 Bad Request]>
+           │            │       │        │               <C...
+           │            │       │        └ <property object at 0x0000021D939EB8D0>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot5040935584:AAHGlNMGfqXhi5bctUpBU0fv1aMbYWMrSGQ/sendMessage) [400 Bad Request]>
+           │            │         <C...
+           │            └ 'sendMessage'
+           └ <function check_result at 0x0000021D9403E5F0>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ "Bad Request: can't parse entities: Unclosed end tag at byte offset 109"
+    │          │          └ <classmethod(<function _MatchErrorMixin.detect at 0x0000021D93E5E290>)>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\utils\\exceptions.py'>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          │   │   │       └ "bad request: can't parse entities: unclosed end tag at byte offset 109"
+          │   │   └ None
+          │   └ <class 'aiogram.utils.exceptions.BadRequest'>
+          └ <class 'aiogram.utils.exceptions.CantParseEntities'>
+
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: unclosed end tag at byte offset 109
+2022-08-29T07:58:41.227380+0300 - ERROR Message: An error has been caught in function 'get_top_handler', process 'MainProcess' (12224), thread 'MainThread' (4432):
+Traceback (most recent call last):
+
+  File "C:\python\bots\DatingBot\main.py", line 38, in <module>
+    executor.start_polling(dp, on_startup=startup, on_shutdown=shutdown, skip_updates=True)
+    │        │             │              │                    └ <function shutdown at 0x0000021D94BEFEB0>
+    │        │             │              └ <function startup at 0x0000021D94BEFF40>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000021D9426BDC0>
+    │        └ <function start_polling at 0x0000021D94188F70>
+    └ <module 'aiogram.utils.executor' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\utils\\executor.py'>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\utils\executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x0000021D94189990>
+    └ <aiogram.utils.executor.Executor object at 0x0000021D915A5B40>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000021D93247010>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000021D931980D0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000021D93137760>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 80768667, "message": {"message_id": 14301, "from": {"id": 1079895323, "is_bot": false, "first_name": "...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000021D9426BDC0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x0000021D94060610>
+                 │    │                │      └ <Update {"update_id": 80768667, "message": {"message_id": 14301, "from": {"id": 1079895323, "is_bot": false, "first_name": "E...
+                 │    │                └ <function Handler.notify at 0x0000021D9409BD90>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x0000021D9426BEE0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000021D9426BDC0>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 14301, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "la...
+                     │           └ <function get_top_handler at 0x0000021D95460A60>
+                     └ Handler.HandlerObj(handler=<function get_top_handler at 0x0000021D95460A60>, spec=FullArgSpec(args=['message'], varargs=None,...
+
+> File "C:\python\bots\DatingBot\handlers\client_side\top.py", line 98, in get_top_handler
+    await get_kingdom(message)
+          │           └ <Message {"message_id": 14301, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "lan...
+          └ <function get_kingdom at 0x0000021D95460700>
+
+  File "C:\python\bots\DatingBot\handlers\client_side\top.py", line 76, in get_kingdom
+    await message.answer(translate_text,
+          │       │      └ '最高のユーザーは、このデート チャットボットの <b>毎日 10,000 人以上のメンバー</bに表示されます!\n\n1. 👉<a href="tg://user?id=1079895323">エゴール</a> - 最高の中の最高！\n\nあなた...
+          │       └ <function Message.answer at 0x0000021D940055A0>
+          └ <Message {"message_id": 14301, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "lan...
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\types\message.py", line 397, in answer
+    return await self.bot.send_message(
+                 │    └ <property object at 0x0000021D93E80180>
+                 └ <Message {"message_id": 14301, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "lan...
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\bot.py", line 341, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+                   │    │       │   │       │             └ {'chat_id': 1079895323, 'text': '最高のユーザーは、このデート チャットボットの <b>毎日 10,000 人以上のメンバー</bに表示されます!\n\n1. 👉<a href="tg://user?id=107989...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x0000021D94062530>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\bot\\api.py'>
+                   │    └ <function BaseBot.request at 0x0000021D94079CF0>
+                   └ <aiogram.bot.bot.Bot object at 0x0000021D932268C0>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+                 │   │                  │    │              │    │       │             │       │     └ None
+                 │   │                  │    │              │    │       │             │       └ {'chat_id': 1079895323, 'text': '最高のユーザーは、このデート チャットボットの <b>毎日 10,000 人以上のメンバー</bに表示されます!\n\n1. 👉<a href="tg://user?id=107989...
+                 │   │                  │    │              │    │       │             └ 'sendMessage'
+                 │   │                  │    │              │    │       └ <aiogram.bot.bot.Bot object at 0x0000021D932268C0>
+                 │   │                  │    │              │    └ TelegramAPIServer(base='https://api.telegram.org/bot{token}/{method}', file='https://api.telegram.org/file/bot{token}/{path}')
+                 │   │                  │    │              └ <aiogram.bot.bot.Bot object at 0x0000021D932268C0>
+                 │   │                  │    └ <function BaseBot.get_session at 0x0000021D940795A0>
+                 │   │                  └ <aiogram.bot.bot.Bot object at 0x0000021D932268C0>
+                 │   └ <function make_request at 0x0000021D9403E8C0>
+                 └ <module 'aiogram.bot.api' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\bot\\api.py'>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x0000021D93B18B80>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot5040935584:AAHGlNMGfqXhi5bctUpBU0fv1aMbYWMrSGQ/sendMessage) [400 Bad Request]>
+           │            │       │        │             │        │               <C...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot5040935584:AAHGlNMGfqXhi5bctUpBU0fv1aMbYWMrSGQ/sendMessage) [400 Bad Request]>
+           │            │       │        │               <C...
+           │            │       │        └ <property object at 0x0000021D939EB8D0>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot5040935584:AAHGlNMGfqXhi5bctUpBU0fv1aMbYWMrSGQ/sendMessage) [400 Bad Request]>
+           │            │         <C...
+           │            └ 'sendMessage'
+           └ <function check_result at 0x0000021D9403E5F0>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ "Bad Request: can't parse entities: Unclosed end tag at byte offset 109"
+    │          │          └ <classmethod(<function _MatchErrorMixin.detect at 0x0000021D93E5E290>)>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\utils\\exceptions.py'>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          │   │   │       └ "bad request: can't parse entities: unclosed end tag at byte offset 109"
+          │   │   └ None
+          │   └ <class 'aiogram.utils.exceptions.BadRequest'>
+          └ <class 'aiogram.utils.exceptions.CantParseEntities'>
+
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: unclosed end tag at byte offset 109
+2022-08-29T07:59:36.338411+0300 - ERROR Message: An error has been caught in function 'get_top_handler', process 'MainProcess' (7492), thread 'MainThread' (11096):
+Traceback (most recent call last):
+
+  File "C:\python\bots\DatingBot\main.py", line 38, in <module>
+    executor.start_polling(dp, on_startup=startup, on_shutdown=shutdown, skip_updates=True)
+    │        │             │              │                    └ <function shutdown at 0x0000024825FDFEB0>
+    │        │             │              └ <function startup at 0x0000024825FDFF40>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x000002482565FCD0>
+    │        └ <function start_polling at 0x0000024825578F70>
+    └ <module 'aiogram.utils.executor' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\utils\\executor.py'>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\utils\executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x0000024825579990>
+    └ <aiogram.utils.executor.Executor object at 0x00000248229A5B40>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000024824647010>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000248245980D0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000024824537760>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\zhora\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 80768668, "message": {"message_id": 14303, "from": {"id": 1079895323, "is_bot": false, "first_name": "...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x000002482565FCD0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x0000024825450520>
+                 │    │                │      └ <Update {"update_id": 80768668, "message": {"message_id": 14303, "from": {"id": 1079895323, "is_bot": false, "first_name": "E...
+                 │    │                └ <function Handler.notify at 0x000002482548BD90>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x000002482565FDF0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x000002482565FCD0>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 14303, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "la...
+                     │           └ <function get_top_handler at 0x0000024826850A60>
+                     └ Handler.HandlerObj(handler=<function get_top_handler at 0x0000024826850A60>, spec=FullArgSpec(args=['message'], varargs=None,...
+
+> File "C:\python\bots\DatingBot\handlers\client_side\top.py", line 98, in get_top_handler
+    await get_kingdom(message)
+          │           └ <Message {"message_id": 14303, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "lan...
+          └ <function get_kingdom at 0x0000024826850700>
+
+  File "C:\python\bots\DatingBot\handlers\client_side\top.py", line 76, in get_kingdom
+    await message.answer(translate_text,
+          │       │      └ '最高のユーザーは、このデート チャットボットの <b>毎日 10,000 人以上のメンバー</bに表示されます!\n\n 1. 👉<a href="tg://user?id=1079895323">エゴール</a> - あなたの夢を理解できない人は...
+          │       └ <function Message.answer at 0x00000248253F55A0>
+          └ <Message {"message_id": 14303, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "lan...
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\types\message.py", line 397, in answer
+    return await self.bot.send_message(
+                 │    └ <property object at 0x0000024825270090>
+                 └ <Message {"message_id": 14303, "from": {"id": 1079895323, "is_bot": false, "first_name": "Egor", "username": "kaskadsa", "lan...
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\bot.py", line 341, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+                   │    │       │   │       │             └ {'chat_id': 1079895323, 'text': '最高のユーザーは、このデート チャットボットの <b>毎日 10,000 人以上のメンバー</bに表示されます!\n\n 1. 👉<a href="tg://user?id=10798...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x0000024825452440>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\bot\\api.py'>
+                   │    └ <function BaseBot.request at 0x0000024825469CF0>
+                   └ <aiogram.bot.bot.Bot object at 0x00000248246268C0>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+                 │   │                  │    │              │    │       │             │       │     └ None
+                 │   │                  │    │              │    │       │             │       └ {'chat_id': 1079895323, 'text': '最高のユーザーは、このデート チャットボットの <b>毎日 10,000 人以上のメンバー</bに表示されます!\n\n 1. 👉<a href="tg://user?id=10798...
+                 │   │                  │    │              │    │       │             └ 'sendMessage'
+                 │   │                  │    │              │    │       └ <aiogram.bot.bot.Bot object at 0x00000248246268C0>
+                 │   │                  │    │              │    └ TelegramAPIServer(base='https://api.telegram.org/bot{token}/{method}', file='https://api.telegram.org/file/bot{token}/{path}')
+                 │   │                  │    │              └ <aiogram.bot.bot.Bot object at 0x00000248246268C0>
+                 │   │                  │    └ <function BaseBot.get_session at 0x00000248254695A0>
+                 │   │                  └ <aiogram.bot.bot.Bot object at 0x00000248246268C0>
+                 │   └ <function make_request at 0x000002482542E8C0>
+                 └ <module 'aiogram.bot.api' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\bot\\api.py'>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x0000024824F08B80>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot5040935584:AAHGlNMGfqXhi5bctUpBU0fv1aMbYWMrSGQ/sendMessage) [400 Bad Request]>
+           │            │       │        │             │        │               <C...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot5040935584:AAHGlNMGfqXhi5bctUpBU0fv1aMbYWMrSGQ/sendMessage) [400 Bad Request]>
+           │            │       │        │               <C...
+           │            │       │        └ <property object at 0x0000024824DDB880>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot5040935584:AAHGlNMGfqXhi5bctUpBU0fv1aMbYWMrSGQ/sendMessage) [400 Bad Request]>
+           │            │         <C...
+           │            └ 'sendMessage'
+           └ <function check_result at 0x000002482542E5F0>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ "Bad Request: can't parse entities: Unclosed end tag at byte offset 109"
+    │          │          └ <classmethod(<function _MatchErrorMixin.detect at 0x000002482524E290>)>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from 'C:\\python\\bots\\DatingBot\\venv\\lib\\site-packages\\aiogram\\utils\\exceptions.py'>
+
+  File "C:\python\bots\DatingBot\venv\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          │   │   │       └ "bad request: can't parse entities: unclosed end tag at byte offset 109"
+          │   │   └ None
+          │   └ <class 'aiogram.utils.exceptions.BadRequest'>
+          └ <class 'aiogram.utils.exceptions.CantParseEntities'>
+
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: unclosed end tag at byte offset 109
+(info)2022-09-03 00:24:40,330 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+port should be of type int
+(info)2022-09-03 00:25:06,727 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:28:02,138 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:28:12,154 - WARNING(30) - __main__ - �������� �������� � ����� ������ "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:32:59,930 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:33:40,923 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:34:26,149 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(1130, "nat4-minsk-pool-46-53-178-42.telecom.by' is not allowed to connect to this MySQL server")
+(info)2022-09-03 00:34:45,818 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:34:55,820 - WARNING(30) - __main__ - �������� �������� � ����� ������ "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:38:00,706 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:38:10,708 - WARNING(30) - __main__ - �������� �������� � ����� ������ "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:39:57,472 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:40:07,518 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:40:17,525 - WARNING(30) - __main__ - �������� �������� � ����� ������ "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:41:44,109 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:41:54,111 - WARNING(30) - __main__ - �������� �������� � ����� ������ "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:42:27,358 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:42:46,719 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:43:49,536 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:44:37,288 - WARNING(30) - __main__ - �������� ������ � ���� ������ "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-03 00:44:47,303 - WARNING(30) - __main__ - �������� �������� � ����� ������ "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+(info)2022-09-04 22:22:54,249 - WARNING(30) - __main__ - �������� ������ ��� "/profile"
+
+Can't use file of type photo as video
+(info)2022-09-04 22:26:03,070 - WARNING(30) - __main__ - �������� ������ ��� "/profile"
+
+Can't use file of type photo as video
+(info)2022-09-04 22:28:14,256 - WARNING(30) - __main__ - �������� ������ ��� "/profile"
+
+Can't use file of type photo as video
+(info)2022-09-04 22:31:50,161 - WARNING(30) - __main__ - �������� ������ ��� "/profile"
+
+Can't use file of type photo as video
+(info)2022-09-04 22:32:14,365 - WARNING(30) - __main__ - �������� ������ ��� "/profile"
+
+Can't use file of type photo as video

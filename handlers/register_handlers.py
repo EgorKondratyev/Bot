@@ -9,6 +9,7 @@ from handlers.client_side.referral import register_handlers_referral
 from handlers.client_side.payments_paypal import register_handlers_payments_paypal
 from handlers.client_side.statistic_vip import register_handlers_statistic_vip
 from handlers.admin_side.register_fake_acc import registration_handlers_fake_register
+from handlers.admin_side.newsletter import register_handlers_newsletter
 
 register_stop_handlers()
 register_dating_handlers()
@@ -20,4 +21,7 @@ register_handlers_top()
 register_handlers_referral()
 register_handlers_payments_paypal()
 register_handlers_statistic_vip()
+
+# for admin:
 registration_handlers_fake_register()
+register_handlers_newsletter()

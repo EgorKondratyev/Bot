@@ -2,6 +2,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 
 
 class RegisterFSM(StatesGroup):
+    language = State()
     age = State()
     user_sex = State()
     interesting_sex = State()

@@ -5,7 +5,6 @@ from create_bot.bot import bot, dp
 from log.log import logger
 
 
-@logger.catch()
 async def notification_run():
     """Оповещение админов о запуске бота"""
     load_dotenv()

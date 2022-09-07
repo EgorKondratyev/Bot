@@ -1,0 +1,40 @@
+version: 1
+formatters:
+  simple:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    datefmt: '%d-%b-%y %H:%M:%S'
+  information:
+      style: '{'
+      format: '(info){asctime} - {levelname}({levelno}) - {name} - {message}'
+  warning:
+      style: '{'
+      format: '{asctime} - {levelname}({levelno}) - {module} - {lineno}(line of code) - {message}'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  file_info:
+    class: logging.FileHandler
+    level: INFO
+    formatter: information
+    filename: 'INFO.log'
+  file_warning:
+    class: logging.FileHandler
+    level: WARNING
+    formatter: warning
+    filename: 'WARN.log'
+  file_error:
+    class: logging.FileHandler
+    level: ERROR
+    formatter: warning
+    filename: 'WARN.log'
+loggers:
+  __main__:
+    level: DEBUG
+    handlers: [console, file_info, file_warning, file_error]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [console]

@@ -1,0 +1,78 @@
+2022-09-03 00:24:40,330 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+port should be of type int
+2022-09-03 00:25:06,727 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:28:02,138 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:28:12,154 - WARNING(30) - client_side - 642(line of code) - Возникли проблемы с базой данных "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:32:59,930 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:33:40,923 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:34:26,149 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(1130, "nat4-minsk-pool-46-53-178-42.telecom.by' is not allowed to connect to this MySQL server")
+2022-09-03 00:34:45,818 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:34:55,820 - WARNING(30) - client_side - 642(line of code) - Возникли проблемы с базой данных "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:38:00,706 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:38:10,708 - WARNING(30) - client_side - 642(line of code) - Возникли проблемы с базой данных "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:39:57,472 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:40:07,518 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:40:17,525 - WARNING(30) - client_side - 642(line of code) - Возникли проблемы с базой данных "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:41:44,109 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:41:54,111 - WARNING(30) - client_side - 642(line of code) - Возникли проблемы с базой данных "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:42:27,358 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:42:46,719 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:43:49,536 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:44:37,288 - WARNING(30) - admin_side - 86(line of code) - Возникла ошибка в базе данных "channel"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-03 00:44:47,303 - WARNING(30) - client_side - 642(line of code) - Возникли проблемы с базой данных "referral"
+
+(2003, "Can't connect to MySQL server on '10.16.0.1' (timed out)")
+2022-09-04 22:22:54,249 - WARNING(30) - profile - 88(line of code) - Возникла ошибка при "/profile"
+
+Can't use file of type photo as video
+2022-09-04 22:26:03,070 - WARNING(30) - profile - 89(line of code) - Возникла ошибка при "/profile"
+
+Can't use file of type photo as video
+2022-09-04 22:28:14,256 - WARNING(30) - profile - 88(line of code) - Возникла ошибка при "/profile"
+
+Can't use file of type photo as video
+2022-09-04 22:31:50,161 - WARNING(30) - profile - 90(line of code) - Возникла ошибка при "/profile"
+
+Can't use file of type photo as video
+2022-09-04 22:32:14,365 - WARNING(30) - profile - 90(line of code) - Возникла ошибка при "/profile"
+
+Can't use file of type photo as video

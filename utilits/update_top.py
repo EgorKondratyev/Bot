@@ -47,7 +47,10 @@ async def update_top():
             for smile in smiles:
                 smile = int(smile[0][:1])
                 summa += smile
-            average = summa / len(smiles)
+            try:
+                average = summa / len(smiles)
+            except ZeroDivisionError:
+                continue
             average_their_scores = float("{:.2f}".format(average))
             top_db.add_user(place=score[0], user_id=score[1], amount_their_scores=score[2],
                             average_their_scores=average_their_scores)

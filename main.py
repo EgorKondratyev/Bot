@@ -15,7 +15,7 @@ from utilits.check_expiration_vip import check_expiration_vip
 
 async def sheduler():
     aioschedule.every().day.at('12:00').do(deactivate)
-    aioschedule.every().day.at('01:45').do(update_top)
+    aioschedule.every().day.at('07:17').do(update_top)
     aioschedule.every(2).hours.do(check_expiration_vip)
     while 1:
         await aioschedule.run_pending()
